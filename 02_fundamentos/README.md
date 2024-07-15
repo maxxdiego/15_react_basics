@@ -41,12 +41,15 @@ export default App;
 ./src/components/User.jsx
 
 import React from "react";
-// Criando a variável
+
 const User = () => {
+
+  // Criando a variável
   const name = "Diego";
+
   return (
     <>
-      // Utilizando uma expressão JSX com { }
+      // Utilizando uma expressão JSX com { } (chamando a variável)
       <div>Bem-vindo, {name}!</div>
     </>
   );
@@ -59,8 +62,8 @@ export default User;
 ./src/App.jsx:
 
 // Importando o componente
-import User from "./components/User";
 import Welcome from "./components/Welcome";
+import User from "./components/User";
 
 function App() {
   return <>
