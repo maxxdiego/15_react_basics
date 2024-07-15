@@ -1,4 +1,4 @@
-# React + Vite
+# 01 - Setup
 
 ## Iniciar um projeto no Vite
 
