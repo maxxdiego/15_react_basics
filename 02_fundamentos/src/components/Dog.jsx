@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Dog = ({name, breed}) => {
     // props.name = name
     // Destructuring => {}, []

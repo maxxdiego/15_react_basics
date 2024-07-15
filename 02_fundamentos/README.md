@@ -7,8 +7,6 @@
 ```bash
 ./src/components/Welcome.jsx:
 
-import React from "react";
-
 const Welcome = () => {
   return <h1>Hello, world!</h1>;
 };
@@ -41,8 +39,6 @@ export default App;
 
 ```bash
 ./src/components/User.jsx:
-
-import React from "react";
 
 const User = () => {
 
@@ -87,8 +83,6 @@ export default App;
 ```bash
 ./src/components/Father.jsx:
 
-import React from 'react'
-
 const Father = () => {
   return (
     <div>
@@ -103,8 +97,6 @@ export default Father
 
 ```bash
 ./src/components/Child.jsx:
-
-import React from 'react'
 
 const Child = () => {
   return (
@@ -122,8 +114,6 @@ export default Child
 
 ```bash
 ./src/components/Father.jsx:
-
-import React from 'react'
 
 // Importando o componente filho
 import Child from './Child'
@@ -181,8 +171,6 @@ export default App;
 ```bash
 ./src/Description.jsx:
 
-import React from 'react'
-
 const Description = (props) => {
 
     // props = {} é um objeto
@@ -236,8 +224,6 @@ export default App;
 ```bash
 ./src/components/Dog.jsx
 
-import React from 'react'
-
 const Dog = ({name, breed}) => {
     // props.name = name
     // Destructuring => {}, []
@@ -284,6 +270,138 @@ function App() {
 export default App;
 
 ```
+
+## Hook - useState
+
+O useState é um hook do React que permite adicionar estado a componentes funcionais. Em outras palavras, ele permite que você crie variáveis que o React observa e que, quando atualizadas, fazem com que o componente seja re-renderizado para refletir as mudanças.
+
+```bash
+./src/components/Counter.jsx:
+
+// Importando o hook useState
+import { useState } from "react";
+
+const Counter = () => {
+  // [ consultar valor, alterar valor ]
+  const [count, setCount] = useState(1);
+
+  // Variáveis não re-renderizam o componente
+  // let x = 10;
+  // console.log(x)
+
+  // <div>
+  //    <p>Contador: {x}</p>
+  //    <button onClick={() => (x = x+1)}>Aumentar</button>
+  // </div>
+
+  return (
+    <>
+      <div>
+        <p>Contador: {count}</p>
+        <button onClick={() => setCount(count + 1)}>Aumentar</button>
+      </div>
+    </>
+  );
+};
+
+export default Counter;
+
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+  { /* Chamando o componente com useState: */}
+  <Counter />
+
+  </>;
+
+
+}
+
+export default App;
+
+```
+
+## Múltiplos estados (vários states em um componente)
+
+```bash
+./src/components/UserInfoForm.jsx:
+
+import { useState } from "react";
+
+const UserInfoForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (event) => {
+
+    event.preventDefault()
+
+    // Acessar a API via fetch ou axios
+
+    console.log(name, email);
+
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Digite o seu nome"
+      />
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Digite o seu e-mail"
+      />
+      {name} {email}
+      <button type="submit">Enviar</button>
+    </form>
+  );
+};
+
+export default UserInfoForm;
+
+```
+
+## Eventos no React JS
+
+```bash
+./src/components/Button.jsx:
+
+// Chamando a função handleClick no OnClick e passando argumento:
+
+// const Button = () => {
+
+//     const handleClick = (num) => {
+//         console.log("Clicou!", num)
+//     }
+//   return (
+//     <button onClick={() => handleClick(5)}>Clique em mim!</button>
+//   )
+// }
+
+const Button = () => {
+
+    const handleClick = () => {
+        console.log("Clicou!")
+    }
+  return (
+    <button onClick={handleClick}>Clique em mim!</button>
+  )
+}
+
+export default Button
+
+```
+
+
 
 <hr>
 

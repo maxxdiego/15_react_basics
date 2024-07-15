@@ -1,7 +1,5 @@
 // Expressões Javascript
 
-import React from "react";
-
 const User = () => {
   const name = "Diego";
   return (

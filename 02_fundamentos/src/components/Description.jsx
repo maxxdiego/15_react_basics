@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Description = (props) => {
 
     // props = {} é um objeto
