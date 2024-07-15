@@ -285,3 +285,8 @@ export default App;
 
 ```
 
+<hr>
+
+### Autor
+Prof. Diego Max da Silva<br>
+https://lattes.cnpq.br/4370663836049458
