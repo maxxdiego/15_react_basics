@@ -425,7 +425,7 @@ export default ParentFunction;
 ```
 
 ```bash
-./src/ChildFunction.jsx:
+./src/components/ChildFunction.jsx:
 
 const ChildFunction = ({ onChildClick }) => {
   return (
@@ -437,6 +437,253 @@ export default ChildFunction;
 
 ```
 
+## Eventos de formulários
+
+```bash
+./src/components/Form.jsx
+
+const Form = () => {
+
+    const [value, setValue] = useState("");
+    
+    const handleSubmit = (event) => {
+        // manipulação de dados
+        // validação
+        // envio ao servidor pela API
+        // loading
+        // chamada da função de mensagens de erro/sucesso
+
+        event.preventDefault()
+
+        console.log("Formulário enviado: ", value)
+    }
+
+  return (
+    <form onSubmit={handleSubmit}>
+        <input type="text" value={value} onChange={(e) => setValue(e.target.value)}placeholder="Preencha o campo"/>
+        <button type="submit">Enviar</button>
+    </form>
+  )
+}
+
+export default Form
+```
+
+### Renderização condicional
+
+```bash
+./src/components/RenderConditional.jsx:
+
+const RenderConditional = ({user}) => {
+    // se houver usuário, exiba uma mensagem de boas vindas
+  return (
+    <div>
+        {user && <h1>Bem-vindo de volta, {user}!</h1>}
+    </div>
+  )
+}
+
+export default RenderConditional
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+    {/* Renderização condicional */}
+    <RenderConditional user="Diego" />
+
+  </>;
+
+
+}
+
+export default App;
+
+```
+
+## Expressão ternária
+
+```bash
+./src/components/LoginButton.jsx:
+
+const LoginButton = ({loggedIn}) => {
+  // Entrar -> deslogado
+  // Sair -> logado
+
+  return (
+    <div>{loggedIn ? <button>Sair</button> : <button>Entrar</button>}</div>
+  );
+};
+
+export default LoginButton;
+
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+    {/* Expressão ternária */}
+    <LoginButton loggedIn={false} />
+    <LoginButton loggedIn={true} />
+
+  </>;
+
+
+}
+
+export default App;
+
+```
+
+## Render nulo
+
+```bash
+./src/components/Warning.jsx
+
+const Warning = ({ warning }) => {
+
+    if (!warning) {
+        return null
+    }
+
+  return (
+    <div>
+        Aviso!
+    </div>
+  )
+}
+
+export default Warning
+
+```
+
+```bash
+./src/App.jsx
+
+...
+
+      {/* Render nulo */}
+      <Warning warning={null}/>
+      <Warning warning={"Temos um conteúdo."}/>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+# Listas (arrays) e Chaves (keys)
+
+```bash
+./src/components/NumberList.jsx
+
+const NumberList = ({numbers}) => {
+    // Não será usado estruturas de loop como for, while, etc.
+    // e sim métodos de array - filter, map, reduce, ...
+
+    // Chaves - key
+    // é como se fosse um identificador único para cada elemento
+
+  return (
+    <div>
+        {numbers.map((number, index) => (
+            <li key={index}>{ number }</li>
+        ))
+        }
+    </div>
+  )
+}
+
+export default NumberList
+
+```
+
+```bash
+./src/App.jsx
+
+...
+
+      {/* Listas e Chaves (keys) */}
+      <NumberList numbers={[1, 2, 3, 4, 5]}/>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+## Estilos por atributo
+
+```bash
+./src/components/StylezedButton.jsx
+
+const StylezedButton = () => {
+    
+    // class => classNme
+    // for = htmlFor
+
+    const buttonStyle = {
+        // background-color -> backgroundColor
+        backgroundColor: "darkgreen",
+        color: "#fff",
+        padding: "15px 32px",
+        cursor: "pointer"
+    }
+
+  return (
+    <button style={buttonStyle}>
+        Clique em mim!
+    </button>
+  )
+}
+
+export default StylezedButton
+
+```
+
+## Estilos globais
+
+```bash
+./src/components/BlueButton.jsx
+
+const BlueButton = () => {
+  return (
+    <button className="blueButton">
+        Botão azul
+    </button>
+  )
+}
+
+export default BlueButton
+
+```
+
+
+```bash
+./src/index.css
+
+...
+
+.blueButton {
+  background-color: #008cba;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 15px;
+}
+
+```
+
+## Estilos CSS modules
+
+```bash
+
+```
 
 
 <hr>
