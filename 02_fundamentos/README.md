@@ -51,7 +51,7 @@ const User = () => {
 
   return (
     <>
-      // Utilizando uma expressão JSX com { } (chamando a variável)
+      // Utilizando uma expressão JSX com { } (chamando a variável):
       <div>Bem-vindo, {name}!</div>
     </>
   );
@@ -72,7 +72,7 @@ function App() {
   {/* Comentário */}
   {/* Chamando o componente */}
   <Welcome />
-  {/* Componente que possui a expressão JSX */}
+  {/* Componente que possui a expressão JSX: */}
   <User />
   </>;
 }
@@ -133,7 +133,7 @@ const Father = () => {
     <div>
         Componente pai
 
-        {*/ Chamando o componente filho /*}
+        {*/ Chamando o componente filho: /*}
         <Child />
 
     </div>
@@ -159,10 +159,10 @@ function App() {
   {/* Comentário */}
   {/* Chamando o componente */}
   <Welcome />
-  {/* Componente que possui a expressão JSX */}
+  {/* Componente que possui a expressão JSX: */}
   <User />
 
-  {/* Componente pai que possui um compnente filho incorporado */}
+  {/* Componente pai que possui um compnente filho incorporado: */}
   <Father />
 
   </>;
@@ -217,16 +217,71 @@ function App() {
   {/* Comentário */}
   {/* Chamando o componente */}
   <Welcome />
-  {/* Componente que possui a expressão JSX */}
+  {/* Componente que possui a expressão JSX: */}
   <User />
-  {/* Componente pai que possui um compnente filho incorporado */}
+  {/* Componente pai que possui um compnente filho incorporado: */}
   <Father />
 
-  // Chamando o componente e passando as props para o mesmo
+  {/* Chamando o componente e passando as props para o mesmo: */}
   <Description name="Diego" age={18} />
-  
+
   </>;
 }
 
 export default App;
 ```
+
+## Desestruturação de props
+
+```bash
+./src/components/Dog.jsx
+
+import React from 'react'
+
+const Dog = ({name, breed}) => {
+    // props.name = name
+    // Destructuring => {}, []
+  return (
+    <div>
+        <p>O cachorro se chama {name} e é da raça {breed}.</p>
+    </div>
+  )
+}
+
+export default Dog
+```
+
+```bash
+./src/App.jsx
+
+import "./App.css";
+
+// Importando o componente
+import User from "./components/User";
+import Welcome from "./components/Welcome";
+import Father from "./components/Father";
+import Description from "./components/Description";
+import Dog from "./components/Dog";
+
+function App() {
+  return <>
+  {/* Comentário */}
+  {/* Chamando o componente */}
+  <Welcome />
+  {/* Componente que possui a expressão JSX: */}
+  <User />
+  {/* Componente pai que possui um compnente filho incorporado: */}
+  <Father />
+
+  {/*  Chamando o componente e passando as props para o mesmo: */}
+  <Description name="Diego" age={18} />
+
+  {/* Usando destructuring para passar as props: */}
+  <Dog name="Rex" breed="Pitbull" />
+  </>;
+}
+
+export default App;
+
+```
+
