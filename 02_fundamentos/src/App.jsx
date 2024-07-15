@@ -98,6 +98,7 @@ function App() {
       <br />
 
       <h3>Exercício 03:</h3>
+      <TaskList tasks={[]}/>
       <TaskList
         tasks={[
           {

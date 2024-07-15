@@ -3,8 +3,8 @@
 import "../../css/output.css";
 
 const TaskList = ({ tasks }) => {
-  if (!tasks) {
-    return <p>Não há tarefas a mostrar."</p>;
+  if (tasks.length === 0) {
+    return <p>Não há tarefas para mostrar.</p>;
   }
 
   return (
