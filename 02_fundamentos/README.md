@@ -79,3 +79,65 @@ export default App;
 ```
 
 ## Componente dentro de componente
+
+* Podemos chamar um componente dentro de outro conforme os modelos a seguir:
+
+```bash
+./src/components/Father.jsx
+
+import React from 'react'
+
+const Father = () => {
+  return (
+    <div>
+        Componente pai
+    </div>
+  )
+}
+
+export default Father
+
+```
+
+```bash
+./src/components/Child.jsx
+
+import React from 'react'
+
+const Child = () => {
+  return (
+    <div>
+        Componente filho
+    </div>
+  )
+}
+
+export default Child
+
+```
+
+* Importando e chamando o componente filho dentro componente pai:
+
+```bash
+./src/components/Father.jsx
+
+import React from 'react'
+
+// Importando o componente filho
+import Child from './Child'
+
+const Father = () => {
+  return (
+    <div>
+        Componente pai
+
+        {*/ Chamando o componente filho /*}
+        <Child />
+
+    </div>
+  )
+}
+
+export default Father
+
+```
