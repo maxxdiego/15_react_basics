@@ -1,5 +1,5 @@
 import "./App.css";
-import Child from "./components/Child";
+import Description from "./components/Description";
 import Father from "./components/Father";
 // Importando o componente
 import User from "./components/User";
@@ -12,7 +12,10 @@ function App() {
   <Welcome />
   {/* Componente que possui a expressão JSX */}
   <User />
+  {/* Componente pai que possui um compnente filho incorporado */}
   <Father />
+
+  <Description name="Diego" age={18} />
   </>;
 }
 
