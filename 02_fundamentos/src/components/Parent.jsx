@@ -1,6 +1,6 @@
 import Child from './Child'
 
-const Father = () => {
+const Parent = () => {
   return (
     <div>
         Componente pai
@@ -12,4 +12,4 @@ const Father = () => {
   )
 }
 
-export default Father
+export default Parent

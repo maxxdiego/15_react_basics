@@ -81,9 +81,9 @@ export default App;
 * Podemos chamar um componente dentro de outro conforme os modelos a seguir:
 
 ```bash
-./src/components/Father.jsx:
+./src/components/Parent.jsx:
 
-const Father = () => {
+const Parent = () => {
   return (
     <div>
         Componente pai
@@ -91,7 +91,7 @@ const Father = () => {
   )
 }
 
-export default Father
+export default Parent
 
 ```
 
@@ -113,12 +113,12 @@ export default Child
 * Importando e chamando o componente filho dentro componente pai:
 
 ```bash
-./src/components/Father.jsx:
+./src/components/Parent.jsx:
 
 // Importando o componente filho
 import Child from './Child'
 
-const Father = () => {
+const Parent = () => {
   return (
     <div>
         Componente pai
@@ -130,7 +130,7 @@ const Father = () => {
   )
 }
 
-export default Father
+export default Parent
 
 ```
 
@@ -142,7 +142,7 @@ import "./App.css";
 // Importando o componente
 import User from "./components/User";
 import Welcome from "./components/Welcome";
-import Father from "./components/Father";
+import Parent from "./components/Parent";
 
 function App() {
   return <>
@@ -153,7 +153,7 @@ function App() {
   <User />
 
   {/* Componente pai que possui um compnente filho incorporado: */}
-  <Father />
+  <Parent />
 
   </>;
 }
@@ -197,7 +197,7 @@ import "./App.css";
 // Importando o componente
 import User from "./components/User";
 import Welcome from "./components/Welcome";
-import Father from "./components/Father";
+import Parent from "./components/Parent";
 import Description from "./components/Description";
 
 function App() {
@@ -208,7 +208,7 @@ function App() {
   {/* Componente que possui a expressão JSX: */}
   <User />
   {/* Componente pai que possui um compnente filho incorporado: */}
-  <Father />
+  <Parent />
 
   {/* Chamando o componente e passando as props para o mesmo: */}
   <Description name="Diego" age={18} />
@@ -245,7 +245,7 @@ import "./App.css";
 // Importando o componente
 import User from "./components/User";
 import Welcome from "./components/Welcome";
-import Father from "./components/Father";
+import Parent from "./components/Parent";
 import Description from "./components/Description";
 import Dog from "./components/Dog";
 
@@ -257,7 +257,7 @@ function App() {
   {/* Componente que possui a expressão JSX: */}
   <User />
   {/* Componente pai que possui um compnente filho incorporado: */}
-  <Father />
+  <Parent />
 
   {/*  Chamando o componente e passando as props para o mesmo: */}
   <Description name="Diego" age={18} />
@@ -398,6 +398,42 @@ const Button = () => {
 }
 
 export default Button
+
+```
+
+## Passando funções de manipulação de eventos como props
+
+```bash
+./src/components/ParentFunction.jsx:
+
+import ChildFunction from "./ChildFunction";
+
+const ParentFunction = () => {
+  const handleChildClick = () => {
+    console.log("Função criada no elemento pai!");
+  };
+
+  return (
+    <div>
+      <ChildFunction onChildClick={handleChildClick} />
+    </div>
+  );
+};
+
+export default ParentFunction;
+
+```
+
+```bash
+./src/ChildFunction.jsx:
+
+const ChildFunction = ({ onChildClick }) => {
+  return (
+    <button onClick={onChildClick}>Botão criado no componente filho</button>
+  );
+};
+
+export default ChildFunction;
 
 ```
 
