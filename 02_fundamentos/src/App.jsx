@@ -17,6 +17,9 @@ import Warning from "./components/Warning";
 import NumberList from "./components/NumberList";
 import StylezedButton from "./components/StylezedButton";
 import BlueButton from "./components/BlueButton";
+import Greeting from "./exercicios/components/Greeting";
+import NumberCounter from "./exercicios/components/NumberCounter";
+import TaskList from "./exercicios/components/TaskList";
 
 function App() {
   return (
@@ -58,11 +61,11 @@ function App() {
       <LoginButton loggedIn={true} />
 
       {/* Render nulo */}
-      <Warning warning={null}/>
-      <Warning warning={"Temos um conteúdo."}/>
+      <Warning warning={null} />
+      <Warning warning={"Temos um conteúdo."} />
 
       {/* Listas e Chaves (keys) */}
-      <NumberList numbers={[1, 2, 3, 4, 5]}/>
+      <NumberList numbers={[1, 2, 3, 4, 5]} />
 
       {/* Estilos por atributo */}
       <StylezedButton />
@@ -70,6 +73,55 @@ function App() {
       {/* Estilos globais */}
       <BlueButton />
 
+      <br />
+      <br />
+      <br />
+      <hr />
+      <br />
+      <br />
+      <br />
+      <h1>Exercícios:</h1>
+      <br />
+      <br />
+      <h3>Exercício 01:</h3>
+      <Greeting name="João" />
+
+      <br />
+      <br />
+      <br />
+
+      <h3>Exercício 02:</h3>
+      <NumberCounter />
+
+      <br />
+      <br />
+      <br />
+
+      <h3>Exercício 03:</h3>
+      <TaskList
+        tasks={[
+          {
+            id: "1",
+            text: "Pagar contas.",
+          },
+          {
+            id: "2",
+            text: "Fazer compra.",
+          },
+          {
+            id: "3",
+            text: "Retirar o lixo.",
+          },
+          {
+            id: "4",
+            text: "Lavar o carro.",
+          },
+          {
+            id: "5",
+            text: "Estudar.",
+          }
+        ]}
+      />
     </>
   );
 }

@@ -679,13 +679,6 @@ export default BlueButton
 
 ```
 
-## Estilos CSS modules
-
-```bash
-
-```
-
-
 <hr>
 
 ### Autor
