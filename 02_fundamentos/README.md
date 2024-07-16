@@ -542,7 +542,7 @@ export default App;
 ## Render nulo
 
 ```bash
-./src/components/Warning.jsx
+./src/components/Warning.jsx:
 
 const Warning = ({ warning }) => {
 
@@ -562,7 +562,7 @@ export default Warning
 ```
 
 ```bash
-./src/App.jsx
+./src/App.jsx:
 
 ...
 
@@ -580,7 +580,7 @@ export default App;
 # Listas (arrays) e Chaves (keys)
 
 ```bash
-./src/components/NumberList.jsx
+./src/components/NumberList.jsx:
 
 const NumberList = ({numbers}) => {
     // Não será usado estruturas de loop como for, while, etc.
@@ -604,7 +604,7 @@ export default NumberList
 ```
 
 ```bash
-./src/App.jsx
+./src/App.jsx:
 
 ...
 
@@ -621,7 +621,7 @@ export default App;
 ## Estilos por atributo
 
 ```bash
-./src/components/StylezedButton.jsx
+./src/components/StylezedButton.jsx:
 
 const StylezedButton = () => {
     
@@ -650,7 +650,7 @@ export default StylezedButton
 ## Estilos globais
 
 ```bash
-./src/components/BlueButton.jsx
+./src/components/BlueButton.jsx:
 
 const BlueButton = () => {
   return (
@@ -666,7 +666,7 @@ export default BlueButton
 
 
 ```bash
-./src/index.css
+./src/index.css:
 
 ...
 
