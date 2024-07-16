@@ -158,6 +158,239 @@ export default App;
 
 ```
 
+## useReducer
+
+O useReducer é um hook do React que oferece uma maneira de gerenciar o estado em componentes funcionais, especialmente quando esse estado é complexo e envolve várias transições. Ele é uma alternativa ao useState e funciona de forma semelhante ao Redux, mas é integrado ao React.
+
+### Vantagens
+
+* Gerenciamento de Estado Complexo: Ideal para estados complexos com várias transições.
+* Código Organizado: A separação das ações e do redutor ajuda a manter o código limpo e organizado.
+* Previsibilidade: Como o estado é atualizado por meio de ações, o comportamento é mais previsível.
+* O useReducer é uma ferramenta poderosa no React, especialmente útil quando o estado do componente é complicado e requer uma lógica de atualização mais sofisticada.
+
+```bash
+./src/components/Counter.jsx:
+
+import { useReducer } from "react";
+
+// Definição de estado inicial
+
+const estadoInicial = { contador: 0 };
+
+// Função reducer que define como as ações atualizam o estado
+function reducer(estado, acao) {
+  switch (acao.tipo) {
+    case "incrementar":
+      return { contador: estado.contador + 1 };
+      case "incrementar_dobrado":
+        return { contador: estado.contador + 2 };
+    case "decrementar":
+      return { contador: estado.contador - 1 };
+    case "resetar":
+      return { contador: 0 };
+    default:
+      throw new Error("Ação não suportada");
+  }
+}
+
+const Counter = () => {
+  // Inicializar o useReducer com estado inicial e função modificadora
+  const [estado, dispatch] = useReducer(reducer, estadoInicial);
+
+  return <div>
+    <p>Contagem: {estado.contador}</p>
+    <button onClick={() => dispatch({tipo: "incrementar"})}>Incrementar</button>
+    <button onClick={() => dispatch({tipo: "incrementar_dobrado"})}>Incrementar dobrado</button>
+    <button onClick={() => dispatch({tipo: "decrementar"})}>Decrementar</button>
+    <button onClick={() => dispatch({tipo: "resetar"})}>Resetar</button>
+  </div>;
+};
+
+export default Counter;
+
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+      {/* useReducer */}
+      {/* estados mais complexos */}
+      <Counter />
+
+    </>
+  );
+}
+
+export default App;
+
+```
+
+## Custom hook
+
+Custom Hooks no React são funções JavaScript que começam com "use" e permitem reutilizar lógica de estado e efeitos entre componentes funcionais. Eles ajudam a evitar duplicação de código e tornam os componentes mais limpos e fáceis de manter.
+
+### Por Que Usar Custom Hooks?
+* Reutilização de Lógica: Permitem encapsular e reutilizar lógica de estado complexa em diferentes componentes.
+* Organização: Mantêm o código organizado e modular.
+* Facilidade de Manutenção: Facilita a manutenção e atualização da lógica de estado e efeitos.
+
+### Criando um Custom Hook
+Um Custom Hook é uma função que pode usar outros hooks internos, como useState, useEffect, useReducer, etc. Aqui está um exemplo básico:
+
+```bash
+./src/hooks/useWindowSize.js:
+
+import { useState, useEffect } from "react";
+
+export default function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    // Função que altera os valores
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Evento que dispara a função
+    window.addEventListener("resize", handleResize);
+
+    handleResize()
+
+    // Limpeza de memória
+    return() => window.removeEventListener("resize", handleResize)
+  }, []);
+
+  return windowSize
+}
+
+```
+
+```bash
+./src/components/DisplayWindowSize.js:
+
+import useWindowSize from "../hooks/useWindowSize";
+
+const DisplayWindowSize = () => {
+  const { width, height } = useWindowSize();
+
+  return (
+    <div>
+      <p>A largura da janela é: {width}</p>
+      <p>A altura da janela é: {height}</p>
+    </div>
+  );
+};
+
+export default DisplayWindowSize;
+
+```
+
+## Slots e children props
+
+```bash
+./src/components/Container.jsx:
+
+const Container = ({ children }) => {
+  return (
+    <div className="container">
+      <h2>Iniciando:</h2>
+      <div>{children}</div>
+      <p>Terminou.</p>
+    </div>
+  );
+};
+
+export default Container;
+
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+      {/* Slots e children props */}
+      <Container>
+        <h1>Título da seção</h1>
+        <p>Este é o meu subtítulo</p>
+        <Counter />
+      </Container>
+
+```
+
+
+## Sincronizar o estado com props
+
+```bash
+./src/components/UserProfile.jsx:
+
+import { useState, useEffect } from "react";
+
+const UserProfile = ({userId}) => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Função para buscar dados
+    const findUsers = async () => {
+      // resposta assíncrona
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${userId}`
+      );
+
+      const userData = await response.json();
+
+      setUser(userData);
+    };
+
+    if (userId) {
+      findUsers();
+    }
+  }, [userId]);
+
+  return (
+    <div>
+      {user ? (
+        <div>
+          <h1>{user.name}</h1>
+          <p>{user.email}</p>
+        </div>
+      ) : (
+        <p>Carregando perfil do usuário...</p>
+      )}
+    </div>
+  );
+};
+
+export default UserProfile;
+
+```
+
+```bash
+./src/App.jsx:
+
+...
+
+     {/* Sincronizar o estado com props */}
+      {/* prop => componente => chamada de API => resulta em um dado */}
+      <UserProfile userId={1}/>
+      <UserProfile userId={2}/>
+    </>
+  );
+}
+
+export default App;
+
+```
+
 <hr>
 
 ### Autor
