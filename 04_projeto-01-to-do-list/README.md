@@ -1,10 +1,4 @@
-# React + Vite
-
-## Iniciar um projeto no Vite
-
-```bash
-npx create-vite .
-```
+# Projeto 01 - To Do List
 
 ## Instalar as dependências do projeto
 

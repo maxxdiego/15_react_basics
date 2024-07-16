@@ -9,7 +9,7 @@ npx create-vite .
 ## Instalar as dependências do projeto
 
 ```bash
-npx create-vite .
+npm install
 ```
 
 ## Iniciar a execução do projeto
