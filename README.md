@@ -1,5 +1,9 @@
 # React + Vite
 
+![NPM](https://img.shields.io/npm/l/react)
+
+:warning: Ainda em construção. :construction:
+
 ## Iniciar um projeto no Vite
 
 ```bash
