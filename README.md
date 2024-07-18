@@ -2,8 +2,6 @@
 
 ![NPM](https://img.shields.io/npm/l/react)
 
-:warning: Ainda em construção. :construction:
-
 ## Descrição:
 
 React é uma biblioteca JavaScript desenvolvida pelo Facebook, usada para construir interfaces de usuário, especialmente em aplicações web de página única. Foi projetada para tornar o desenvolvimento de UIs interativas e dinâmicas mais eficiente e modular.
