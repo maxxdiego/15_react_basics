@@ -37,7 +37,7 @@ li span {
 }
 
 button {
-  background-color: #5cb85c;
+  background-color: #b85c5c;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -46,13 +46,18 @@ button {
 }
 
 button:hover {
-  background-color: #449d44;
+  background-color: #9d4444;
 }
 
 button[type="submit"] {
-  background-color: #337ab7;
+  background-color: #5cb85c;
 }
 
 button[type="submit"]:hover {
-  background-color: #286090;
+  background-color: #449d44;
+}
+
+p {
+  font-size: 0.8rem;
+  padding: 10px;
 }

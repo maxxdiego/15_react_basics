@@ -7,7 +7,7 @@ const Task = ({ task, onDelete, onToggleDone }) => {
       >
         {task.date} - {task.text}
       </span>
-      <button onClick={onDelete}>Remover</button>
+      <button onClick={onDelete}>x</button>
     </li>
   );
 };
