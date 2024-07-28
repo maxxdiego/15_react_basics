@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import TaskDetails from "./components/TaskDetails";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -58,6 +59,11 @@ function App() {
             </li>
           </ul>
         </div>
+        {/* 6 - Página 404 (Not Found) */}
+        <div>
+          <h2>Itens</h2>
+          <Link to="/items/1">Item 1</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -70,8 +76,11 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-         {/* 5 - Rotas com parâmetros (dinâmicas) */}
-         <Route path="/tasks/:taskId" element={<TaskDetails />} />
+        {/* 5 - Rotas com parâmetros (dinâmicas) */}
+        <Route path="/tasks/:taskId" element={<TaskDetails />} />
+
+        {/* 6 - Página 404 (Not Found) */}
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <p>Rodapé</p>
     </>

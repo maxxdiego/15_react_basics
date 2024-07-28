@@ -257,3 +257,51 @@ const TaskDetails = () => {
 export default TaskDetails;
 
 ```
+
+## Página 404 (Not found)
+
+```bash
+
+./src/App.jsx:
+
+...
+
+        {/* 6 - Página 404 (Not Found) */}
+        <div>
+          <h2>Itens</h2>
+          <Link to="/items/1">Item 1</Link>
+        </div>
+
+...
+
+        {/* 6 - Página 404 (Not Found) */}
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
+      <p>Rodapé</p>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+```bash
+
+./src/components/NotFound.jsx:
+
+import { Link } from "react-router-dom"
+
+const NotFound = () => {
+  return (
+    <div>
+        <h2>404</h2>
+        <p>Página não encontrada!</p>
+        <Link to="/">Voltar para a home</Link>
+    </div>
+  )
+}
+
+export default NotFound
+
+```
