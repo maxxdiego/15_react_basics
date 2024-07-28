@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FetchPosts from "./components/FetchPosts";
 import AxiosPosts from "./components/AxiosPosts";
 import PostManager from "./components/PostManager";
+import PostLoader from "./components/PostLoader";
 
 function App() {
   return (
@@ -24,6 +25,15 @@ function App() {
       <div>
         <Link to="/posts">Gerenciar posts</Link>
       </div>
+      {/* 3 - Tratamento de erros */}
+      <div>
+        <Link to="/post/1">Carregar Post 1</Link>
+      </div>
+
+      <div>
+        <Link to="/post/999">Carregar Post 999</Link>
+      </div>
+
       <Routes>
         {/* 1 - GET com Fetch e Axios */}
         <Route path="/fetch-posts" element={<FetchPosts />} />
@@ -32,6 +42,8 @@ function App() {
         {/* 2 - Requisições - POST e UPDATE/PUT */}
         <Route path="/posts" element={<PostManager />} />
 
+        {/* 3 - Tratamento de erros */}
+        <Route path="/post/:postId" element={<PostLoader />} />
       </Routes>
     </BrowserRouter>
   );
