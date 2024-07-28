@@ -133,3 +133,70 @@ const Login = () => {
 export default Login;
 
 ```
+
+## Rotas aninhadas
+
+```bash
+
+./src/App.jsx:
+
+...
+
+      <Routes>
+
+          ...
+
+        {/* 4 - Rotas aninhadas */}
+
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+
+      </Routes>
+      <p>Rodapé</p>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+```bash
+
+./src/components/Dashboard.jsx:
+
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+
+const Dashboard = () => {
+  return (
+    <>
+      <div>
+        <h2>Dashboard</h2>
+        <nav>
+          <ul>
+            <li>
+              <Link to="profile">Perfil</Link>
+            </li>
+            <li>
+              <Link to="settings">Configurações</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+
+        {/* Outlet será o "alvo" onde o conteúdo dos links serão carregados */}
+        <Outlet />
+
+
+      </div>
+    </>
+  );
+};
+
+export default Dashboard;
+
+```

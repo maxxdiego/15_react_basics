@@ -4,6 +4,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Profile from "./components/Profile";
+import Settings from "./components/Settings";
 
 function App() {
   return (
@@ -33,6 +36,10 @@ function App() {
           <li>
             <Link to="/login">Login</Link>
           </li>
+          {/* 4 - Rotas aninhadas */}
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -41,6 +48,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         {/* 3 - useNavigate */}
         <Route path="/login" element={<Login />} />
+        {/* 4 - Rotas aninhadas */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
       </Routes>
       <p>Rodapé</p>
     </>
