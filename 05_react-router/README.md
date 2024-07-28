@@ -200,3 +200,60 @@ const Dashboard = () => {
 export default Dashboard;
 
 ```
+
+## Rotas com parâmetros (rotas dinâmicas)
+
+```bash
+
+./src/App.jsx:
+
+...
+
+        {/* 5 - Rotas com parâmetros (dinâmicas) */}
+        <div>
+          <h2>Tarefas</h2>
+          <ul>
+            <li>
+              <Link to="/tasks/1">Tarefa 1</Link>
+            </li>
+            <li>
+              <Link to="/tasks/2">Tarefa 2</Link>
+            </li>
+            <li>
+              <Link to="/tasks/3">Tarefa 3</Link>
+            </li>
+          </ul>
+        </div>
+
+...
+
+         {/* 5 - Rotas com parâmetros (dinâmicas) */}
+         <Route path="/tasks/:taskId" element={<TaskDetails />} />
+      </Routes>
+      <p>Rodapé</p>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+
+```bash
+
+./src/components/TaskDetail.jsx:
+
+import { useParams } from "react-router-dom";
+
+const TaskDetails = () => {
+  const { taskId } = useParams();
+  return <div>
+    <h2>Detalhes da tarefa:</h2>
+    <p>Vendo a tarefa: {taskId}</p>
+  </div>;
+};
+
+export default TaskDetails;
+
+```
