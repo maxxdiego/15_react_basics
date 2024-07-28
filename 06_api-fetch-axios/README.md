@@ -12,7 +12,7 @@ npm install axios
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
 import "./App.css";
 
@@ -51,7 +51,7 @@ export default App;
 
 ```bash
 
-./src/components/FetchPosts.jsx:
+# ./src/components/FetchPosts.jsx:
 
 import { useState, useEffect } from "react";
 
@@ -103,7 +103,7 @@ export default FetchPosts;
 
 ```bash
 
-./src/components/AxiosPosts.jsx:
+# ./src/components/AxiosPosts.jsx:
 
 import { useState, useEffect } from "react";
 import axios from "axios";
