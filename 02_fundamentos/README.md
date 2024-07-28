@@ -5,7 +5,7 @@
 * Criando um componente "Welcome.jsx":
 
 ```bash
-./src/components/Welcome.jsx:
+# ./src/components/Welcome.jsx:
 
 const Welcome = () => {
   return <h1>Hello, world!</h1>;
@@ -16,7 +16,7 @@ export default Welcome;
 * Importando e utilizando o componente no arquivo App.jsx
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 // Importando o componente
 import Welcome from "./components/Welcome";
@@ -38,7 +38,7 @@ export default App;
 * Uma expressão JSX é um código javascript que incorporamos dentro do HTML, conforme a seguir:
 
 ```bash
-./src/components/User.jsx:
+# ./src/components/User.jsx:
 
 const User = () => {
 
@@ -57,7 +57,7 @@ export default User;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 // Importando o componente
 import Welcome from "./components/Welcome";
@@ -81,7 +81,7 @@ export default App;
 * Podemos chamar um componente dentro de outro conforme os modelos a seguir:
 
 ```bash
-./src/components/Parent.jsx:
+# ./src/components/Parent.jsx:
 
 const Parent = () => {
   return (
@@ -96,7 +96,7 @@ export default Parent
 ```
 
 ```bash
-./src/components/Child.jsx:
+# ./src/components/Child.jsx:
 
 const Child = () => {
   return (
@@ -113,7 +113,7 @@ export default Child
 * Importando e chamando o componente filho dentro componente pai:
 
 ```bash
-./src/components/Parent.jsx:
+# ./src/components/Parent.jsx:
 
 // Importando o componente filho
 import Child from './Child'
@@ -135,7 +135,7 @@ export default Parent
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 import "./App.css";
 
@@ -169,7 +169,7 @@ export default App;
 * Resumindo: "props" são como pacotinhos de informações que você envia de um componente para outro. Pense nelas como as características ou qualidades que um componente tem e que você quer compartilhar. Por exemplo, se você tem um componente de botão, você pode usar props para dizer qual texto deve aparecer no botão. As props ajudam os componentes a conversar e trabalhar juntos.
 
 ```bash
-./src/Description.jsx:
+# ./src/Description.jsx:
 
 const Description = (props) => {
 
@@ -190,7 +190,7 @@ export default Description
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 import "./App.css";
 
@@ -222,7 +222,7 @@ export default App;
 ## Desestruturação de props
 
 ```bash
-./src/components/Dog.jsx
+# ./src/components/Dog.jsx
 
 const Dog = ({name, breed}) => {
     // props.name = name
@@ -238,7 +238,7 @@ export default Dog
 ```
 
 ```bash
-./src/App.jsx
+# ./src/App.jsx
 
 import "./App.css";
 
@@ -276,7 +276,7 @@ export default App;
 O useState é um hook do React que permite adicionar estado a componentes funcionais. Em outras palavras, ele permite que você crie variáveis que o React observa e que, quando atualizadas, fazem com que o componente seja re-renderizado para refletir as mudanças.
 
 ```bash
-./src/components/Counter.jsx:
+# ./src/components/Counter.jsx:
 
 // Importando o hook useState
 import { useState } from "react";
@@ -309,7 +309,7 @@ export default Counter;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -328,7 +328,7 @@ export default App;
 ## Múltiplos estados (vários states em um componente)
 
 ```bash
-./src/components/UserInfoForm.jsx:
+# ./src/components/UserInfoForm.jsx:
 
 import { useState } from "react";
 
@@ -373,7 +373,7 @@ export default UserInfoForm;
 ## Eventos no React JS
 
 ```bash
-./src/components/Button.jsx:
+# ./src/components/Button.jsx:
 
 // Chamando a função handleClick no OnClick e passando argumento:
 
@@ -404,7 +404,7 @@ export default Button
 ## Passando funções de manipulação de eventos como props
 
 ```bash
-./src/components/ParentFunction.jsx:
+# ./src/components/ParentFunction.jsx:
 
 import ChildFunction from "./ChildFunction";
 
@@ -425,7 +425,7 @@ export default ParentFunction;
 ```
 
 ```bash
-./src/components/ChildFunction.jsx:
+# ./src/components/ChildFunction.jsx:
 
 const ChildFunction = ({ onChildClick }) => {
   return (
@@ -440,7 +440,7 @@ export default ChildFunction;
 ## Eventos de formulários
 
 ```bash
-./src/components/Form.jsx
+# ./src/components/Form.jsx
 
 const Form = () => {
 
@@ -472,7 +472,7 @@ export default Form
 ### Renderização condicional
 
 ```bash
-./src/components/RenderConditional.jsx:
+# ./src/components/RenderConditional.jsx:
 
 const RenderConditional = ({user}) => {
     // se houver usuário, exiba uma mensagem de boas vindas
@@ -487,7 +487,7 @@ export default RenderConditional
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -506,7 +506,7 @@ export default App;
 ## Expressão ternária
 
 ```bash
-./src/components/LoginButton.jsx:
+# ./src/components/LoginButton.jsx:
 
 const LoginButton = ({loggedIn}) => {
   // Entrar -> deslogado
@@ -522,7 +522,7 @@ export default LoginButton;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -542,7 +542,7 @@ export default App;
 ## Render nulo
 
 ```bash
-./src/components/Warning.jsx:
+# ./src/components/Warning.jsx:
 
 const Warning = ({ warning }) => {
 
@@ -562,7 +562,7 @@ export default Warning
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -580,7 +580,7 @@ export default App;
 # Listas (arrays) e Chaves (keys)
 
 ```bash
-./src/components/NumberList.jsx:
+# ./src/components/NumberList.jsx:
 
 const NumberList = ({numbers}) => {
     // Não será usado estruturas de loop como for, while, etc.
@@ -604,7 +604,7 @@ export default NumberList
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -621,7 +621,7 @@ export default App;
 ## Estilos por atributo
 
 ```bash
-./src/components/StylezedButton.jsx:
+# ./src/components/StylezedButton.jsx:
 
 const StylezedButton = () => {
     
@@ -650,7 +650,7 @@ export default StylezedButton
 ## Estilos globais
 
 ```bash
-./src/components/BlueButton.jsx:
+# ./src/components/BlueButton.jsx:
 
 const BlueButton = () => {
   return (
@@ -666,7 +666,7 @@ export default BlueButton
 
 
 ```bash
-./src/index.css:
+# ./src/index.css:
 
 ...
 

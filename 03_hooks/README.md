@@ -12,7 +12,7 @@ Aqui está um resumo simples do useEffect:<br><br>
 
 
 ```bash
-./src/components/UseEffectExample.jsx:
+# ./src/components/UseEffectExample.jsx:
 
 import { useEffect, useState } from 'react'
 
@@ -41,7 +41,7 @@ export default UseEffectExample
 ## useEffect - Limpeza de estado
 
 ```bash
-./src/components/Timer.jsx:
+# ./src/components/Timer.jsx:
 
 import { useState, useEffect } from "react";
 
@@ -77,7 +77,7 @@ Aqui está um resumo simples do useContext:<br><br>
 * Consumir o Contexto: Dentro dos componentes que precisam do valor do contexto, você usa o useContext para acessá-lo.
 
 ```bash
-./src/contexts/MyContext.jsx:
+# ./src/contexts/MyContext.jsx:
 
 import { useState, createContext } from "react";
 
@@ -99,7 +99,7 @@ export const MyContextProvider = ({ children }) => {
 ```
 
 ```bash
-./src/components/ContextValue.jsx:
+# ./src/components/ContextValue.jsx:
 
 import {useContext} from 'react'
 import { MyContext } from '../contexts/MyContext'
@@ -118,7 +118,7 @@ export default ContextValue
 ```
 
 ```bash
-./src/components/ChildrenComponent.jsx:
+# ./src/components/ChildrenComponent.jsx:
 
 import { useContext } from 'react'
 import { MyContext } from '../contexts/MyContext'
@@ -140,7 +140,7 @@ export default ChildrenComponent
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -170,7 +170,7 @@ O useReducer é um hook do React que oferece uma maneira de gerenciar o estado e
 * O useReducer é uma ferramenta poderosa no React, especialmente útil quando o estado do componente é complicado e requer uma lógica de atualização mais sofisticada.
 
 ```bash
-./src/components/Counter.jsx:
+# ./src/components/Counter.jsx:
 
 import { useReducer } from "react";
 
@@ -212,7 +212,7 @@ export default Counter;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -241,7 +241,7 @@ Custom Hooks no React são funções JavaScript que começam com "use" e permite
 Um Custom Hook é uma função que pode usar outros hooks internos, como useState, useEffect, useReducer, etc. Aqui está um exemplo básico:
 
 ```bash
-./src/hooks/useWindowSize.js:
+# ./src/hooks/useWindowSize.js:
 
 import { useState, useEffect } from "react";
 
@@ -275,7 +275,7 @@ export default function useWindowSize() {
 ```
 
 ```bash
-./src/components/DisplayWindowSize.js:
+# ./src/components/DisplayWindowSize.js:
 
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -297,7 +297,7 @@ export default DisplayWindowSize;
 ## Slots e children props
 
 ```bash
-./src/components/Container.jsx:
+# ./src/components/Container.jsx:
 
 const Container = ({ children }) => {
   return (
@@ -314,7 +314,7 @@ export default Container;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -331,7 +331,7 @@ export default Container;
 ## Sincronizar o estado com props
 
 ```bash
-./src/components/UserProfile.jsx:
+# ./src/components/UserProfile.jsx:
 
 import { useState, useEffect } from "react";
 
@@ -375,7 +375,7 @@ export default UserProfile;
 ```
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 

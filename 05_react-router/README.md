@@ -10,7 +10,7 @@ npm install react-router-dom
 
 ```bash
 
-./src/main.jsx:
+# ./src/main.jsx:
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 ## Criando rotas
 
 ```bash
-./src/App.jsx:
+# ./src/App.jsx:
 
 import "./App.css";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
@@ -59,7 +59,7 @@ export default App;
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
   <nav>
     <ul>
@@ -78,7 +78,7 @@ Com o NavLink é possível marcar o link ativo no momento
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
           <li>
             <NavLink
@@ -97,7 +97,7 @@ Com o useNavigate é possível redirecionar o usuário para um determinado link
 
 ```bash
 
-./src/components/Login.jsx:
+# ./src/components/Login.jsx:
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -138,7 +138,7 @@ export default Login;
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -165,7 +165,7 @@ export default App;
 
 ```bash
 
-./src/components/Dashboard.jsx:
+# ./src/components/Dashboard.jsx:
 
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
@@ -205,7 +205,7 @@ export default Dashboard;
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -242,7 +242,7 @@ export default App;
 
 ```bash
 
-./src/components/TaskDetail.jsx:
+# ./src/components/TaskDetail.jsx:
 
 import { useParams } from "react-router-dom";
 
@@ -262,7 +262,7 @@ export default TaskDetails;
 
 ```bash
 
-./src/App.jsx:
+# ./src/App.jsx:
 
 ...
 
@@ -288,7 +288,7 @@ export default App;
 
 ```bash
 
-./src/components/NotFound.jsx:
+# ./src/components/NotFound.jsx:
 
 import { Link } from "react-router-dom"
 
